@@ -2,7 +2,7 @@ const http = require("http");
 const { google } = require("googleapis");
 
 const SPREADSHEET_ID = "13paauEGoqT_Pt71En4qZ2HPPAaxFhvVBaJAfHbaYYmo";
-const PORT = 3333;
+const PORT = process.env.PORT || 3333;
 
 const SERVICE_ACCOUNT = {
   type: "service_account",
