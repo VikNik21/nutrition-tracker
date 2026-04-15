@@ -4,16 +4,7 @@ const { google } = require("googleapis");
 const SPREADSHEET_ID = "13paauEGoqT_Pt71En4qZ2HPPAaxFhvVBaJAfHbaYYmo";
 const PORT = 3333;
 
-const SERVICE_ACCOUNT = {
-  type: "service_account",
-  project_id: "nutrition-tracker-493413",
-  private_key_id: "54c5f10634c174192da37c425ed4059e42770bfd",
-  private_key: "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDVM39hqPLKM2Qj\nhBm/XlY0ByNA9deec0RiQFuKa5h/SlkVUNai/06J/5+L5n6UGn9Y5hc9N0kts4KV\nUIp5p14gCkEJ8Quz9+5Fgns8M3Mvy1J2N/fZBnBe05JiLOUq0uuTiOBfE5u3kYOW\nWKdYK+ymilMzXNRzLtGlOpUhun1tytAQCmYyhaq3CRkkS9fdC4aCazf7rK3abJWi\na6tcmjtB7d78am6nCQdie0refzVpgDecurK5LlblxXJgDAXVShQyAbkw4W9itRv0\n/w/Kfc57cCCJ5rta4yVECS8e7qyw7/9f9u4s6St+8KnVIuw3PEwZegLpI5Zpw92x\nBWlcbLBfAgMBAAECggEAFq3lOYLK3PaNivek84X5/ovZ1LGyL6FMX3VAJ5/dd4D1\nq/5O7sTg2m4uTygERAXzkQXc5/6nEqz7UZ3hNSK4MQlWNNQG7iyMFKnWKSfB844Z\n5gh7HYOBVZ0E/9uNvznzpFyVnZeM44CfslEY8BiwEmE5i4eu89fBpmVucsmPSSvt\nlveJgnvyrNDRbqJkZmS7ikm+fs1kMKrQk3M2zQH2zt4oaYjmVLgx26xriTBHoPSI\n8aLZAVtOxHbY4QG5mEYx1P1FW9Fb4MN47Aj5aggblf1pV3yMvzmxV3sgLO2RCW1I\npSlsrltxzagOBC/Os4P9ZyxSgwADI3IsusL48isBsQKBgQD6NUBL5IFYcySGwQK7\nsqeqo0tGjquMxIyNSQB4ci4Vzh56Sv87LKDfdmRo/DEJLf2LQ1YVSwTU4u2QakpA\nQFm0VNGa94gKjDKri/pNFf6twV8yBAdp2amcrwlX8QV4XHShgjQ4oEcufMXnMSpV\njEWV8ggnake90l1wpv8+af7tsQKBgQDaIvECasCoPNMHSmnh153Aeh0IHh0Xrsfq\nmHnu4c05kDJYkWxhjvztjyNzm2ds1ZXhykyYIo+DmTYYkcMSWNDv/KduEggMwh3V\n1UtI9OLNcK3wMo53+mylh7Uk+H3QuYaxQvFLosVYPOhKANz1zMbUlvnwOyT9NCZ4\nUJgk62qzDwKBgAKFDsS05GiToEaLIw/o2K9rPZLUVP3x7Mhvd8W+wKAPl1b78l4S\nMPyPIKu9/nBtOiRw5SkJvF64elP9/glvnHeocwPwgjo49zmrCzZDhnERhXfnenui\naYbebGWqU7fGlpYZzZTUaGMbdpLBd/+sjfbYnSRoeZh7yd0ckW17e8nBAoGBAKuq\nKc7EIh+D1nL7Xb4sh+nsb6JuyGhV1OBK5FJZAr+VOfm3X/qao3N0XOri1o6wu0Y4\nhPSI5jYjQY4uT7zFhpAGXeDicdFQhlg8hgXBKieQ0GGh97p1qkDOPoD8yU6UYmpn\niysBypo5PHjYmwsY/zRYKBOlB+P3wXqXulP7rDmDAoGAHVTZZVAjEFDEUF+91FKc\n8M+onLKNOEz+FZ0DOHF64S3v9fHPLXShuo96d+LqxERoOnFnXkR6Qv3AlGsMJ2py\nbhtFJ58l36Hny0g5w0GKh5M6bKEbINjzY4OOMq6ZLr5y2o164mWJCxFoctfItcTf\nFOdJCw3DCrD/2gSUvI3/myQ=\n-----END PRIVATE KEY-----\n",
-  client_email: "nutrition-tracker@nutrition-tracker-493413.iam.gserviceaccount.com",
-  client_id: "109337867384026664915",
-  auth_uri: "https://accounts.google.com/o/oauth2/auth",
-  token_uri: "https://oauth2.googleapis.com/token",
-};
+const SERVICE_ACCOUNT = JSON.parse(process.env.SERVICE_ACCOUNT_JSON);
 
 const TARGETS = { kcal: 2200, protein: 170, carbs: 240, fat: 70 };
 
